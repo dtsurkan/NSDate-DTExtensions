@@ -99,6 +99,38 @@ extension NSDate {
         return newDate!
     }
     
+    func dtDateVySubractingSeconds(seconds: Int) -> NSDate {
+        return self.dtDateByAddingSeconds(-seconds)
+    }
+    
+    func dtDateByAddingMinutes(minutes: Int) -> NSDate {
+        let dateComp = NSDateComponents()
+        let calendar = NSCalendar.currentCalendar()
+        
+        dateComp.minute = minutes
+        let newDate = calendar.dateByAddingComponents(dateComp, toDate: self, options: .WrapComponents)
+        
+        return newDate!
+    }
+    
+    func dtDateBySubractingMinutes(minutes: Int) -> NSDate {
+        return self.dtDateByAddingMinutes(-minutes)
+    }
+    
+    func dtDateByAddingHours(hours: Int) -> NSDate {
+        let dateComp = NSDateComponents()
+        let calendar = NSCalendar.currentCalendar()
+        
+        dateComp.hour = hours
+        let newDate = calendar.dateByAddingComponents(dateComp, toDate: self, options: .WrapComponents)
+        
+        return newDate!
+    }
+    
+    func dtDateBySubractingHours(hours: Int) -> NSDate {
+        return self.dtDateByAddingHours(-hours)
+    }
+    
     
     //MARK: - Class Methods
     
